@@ -128,7 +128,6 @@ const navColorSix = document.querySelectorAll('a')[5].style.color = "green";
 
 //Append and Prepend
 
-
 document.createElement('a');
 document.createElement('a');
 navJobs = document.createTextNode("Jobs");
@@ -136,3 +135,21 @@ navGames = document.createTextNode("Games")
 navSelector = document.querySelector('nav');
 navSelector.appendChild(navJobs);
 navSelector.prepend(navGames);
+
+//Stretch
+
+const btn = document.createElement('button');
+btn.innerHTML = "Click for Color";
+
+let lastP =document.getElementsByTagName("body")[0];
+lastP.appendChild(btn);
+
+
+function random(number) {
+  return Math.floor(Math.random()*(number+1));
+}
+
+btn.onclick = function() {
+  var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  document.body.style.backgroundColor = rndCol;
+}
