@@ -37,6 +37,39 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
+// Nav Section
+const navOne = document.getElementsByTagName('a')[0];
+navOne.textContent = 'Services';
+
+const navTwo = document.getElementsByTagName('a')[1];
+navTwo.textContent = 'Product';
+
+const navThree = document.querySelectorAll('a')[2];
+navThree.textContent = 'Vision';
+
+const navFour = document.querySelectorAll('a')[3];
+navFour.textContent = 'Features';
+
+const navFive = document.querySelectorAll('a')[4];
+navFive.textContent = 'About';
+
+const navSix = document.getElementsByTagName('a')[5];
+navSix.textContent = 'Contact';
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+//CTA Section
+const ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+const ctaHOne = document.querySelector('.cta h1');
+ctaHOne.textContent = 'DOM Is Awesome';
+
+const ctaButton = document.querySelector('.cta button');
+ctaButton.textContent = 'Get Started';
+
+//Main Content Section
+const mainImg = document.querySelector('.middle-img');
+mainImg.src = 'img/mid-page-accent.jpg';
