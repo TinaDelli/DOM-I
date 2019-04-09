@@ -37,6 +37,100 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
+// Nav Section
+let nav = document.querySelectorAll('.container nav a');
+nav.forEach((x, i)=> {
+ x.textContent = Object.values(siteContent.nav)[i];
+ x.style.color = "green";
+});
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+//CTA Section
+const ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+const ctaHOne = document.querySelector('.cta h1');
+ctaHOne.textContent = 'DOM Is Awesome';
+
+const ctaButton = document.querySelector('.cta button');
+ctaButton.textContent = 'Get Started';
+
+//Main Content Section
+const mainImg = document.querySelector('.middle-img');
+mainImg.src = 'img/mid-page-accent.jpg';
+
+const featuresH = document.querySelector('.top-content .text-content h4');
+featuresH.textContent = "Features";
+
+const featuresP = document.querySelector('.top-content .text-content p');
+featuresP.textContent = (siteContent["main-content"]["features-content"]);
+
+const aboutH = document.querySelectorAll('.top-content .text-content h4')[1];
+aboutH.textContent = "About";
+
+const aboutP = document.querySelectorAll ('.top-content .text-content p')[1];
+aboutP.textContent = (siteContent["main-content"]["about-content"]);
+
+const  servicesH = document.querySelector('.bottom-content .text-content h4');
+servicesH.textContent = "Services";
+
+const servicesP = document.querySelectorAll('.bottom-content .text-content p')[0];
+servicesP.textContent = (siteContent["main-content"]["services-content"]);
+
+const productH = document.querySelectorAll('.bottom-content .text-content h4')[1];
+productH.textContent = "Product";
+
+const productP = document.querySelectorAll('.bottom-content .text-content p')[1];
+productP.textContent = (siteContent["main-content"]["product-content"]);
+
+const visionH = document.querySelectorAll('.bottom-content .text-content h4')[2];
+visionH.textContent = 'Vision';
+
+const visionP = document.querySelectorAll('.bottom-content .text-content p')[2];
+visionP.textContent = (siteContent["main-content"]["vision-content"]);
+
+//Contact Section
+document.querySelector('.contact h4').textContent = Object.values(siteContent.contact)[0];
+
+const contactFirstP = document.querySelector('.contact p')
+contactFirstP.textContent= `123 Way 456 Street Somewhere, USA`
+
+document.querySelectorAll('.contact p')[1].textContent = Object.values(siteContent.contact)[2];
+
+document.querySelectorAll('.contact p')[2].textContent =Object.values(siteContent.contact)[3];
+
+
+//Footer
+document.querySelector('footer p').textContent= Object.values(siteContent.footer);
+
+
+//Append and Prepend
+
+const newATag = document.createElement('a');
+newATag.textContent = "Jobs";
+const newerATag = document.createElement('a');
+newerATag.textContent= "Welcome";
+const navContent = document.querySelector('nav');
+navContent.append(newATag);
+navContent.prepend(newerATag);
+
+//Stretch
+
+const btn = document.createElement('button');
+btn.innerHTML = "Click for Color";
+
+let lastP =document.getElementsByTagName("body")[0];
+lastP.appendChild(btn);
+
+
+function random(number) {
+  return Math.floor(Math.random()*(number+1));
+}
+
+btn.onclick = function() {
+  var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  document.body.style.backgroundColor = rndCol;
+}
