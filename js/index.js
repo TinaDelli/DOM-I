@@ -38,23 +38,11 @@ const siteContent = {
 };
 
 // Nav Section
-const navOne = document.getElementsByTagName('a')[0];
-navOne.textContent = 'Services';
-
-const navTwo = document.getElementsByTagName('a')[1];
-navTwo.textContent = 'Product';
-
-const navThree = document.querySelectorAll('a')[2];
-navThree.textContent = 'Vision';
-
-const navFour = document.querySelectorAll('a')[3];
-navFour.textContent = 'Features';
-
-const navFive = document.querySelectorAll('a')[4];
-navFive.textContent = 'About';
-
-const navSix = document.getElementsByTagName('a')[5];
-navSix.textContent = 'Contact';
+let nav = document.querySelectorAll('.container nav a');
+nav.forEach((x, i)=> {
+ x.textContent = Object.values(siteContent.nav)[i];
+ x.style.color = "green";
+});
 
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -118,23 +106,16 @@ document.querySelectorAll('.contact p')[2].textContent =Object.values(siteConten
 //Footer
 document.querySelector('footer p').textContent= Object.values(siteContent.footer);
 
-//Color Change
-const navColor = document.querySelectorAll('a')[0].style.color = "green";
-const navColorTwo = document.querySelectorAll('a')[1].style.color = "green";
-const navColorThree = document.querySelectorAll('a')[2].style.color = "green";
-const navColorFour = document.querySelectorAll('a')[3].style.color = "green";
-const navColorFive = document.querySelectorAll('a')[4].style.color = "green";
-const navColorSix = document.querySelectorAll('a')[5].style.color = "green";
 
 //Append and Prepend
 
-document.createElement('a');
-document.createElement('a');
-navJobs = document.createTextNode("Jobs");
-navGames = document.createTextNode("Games")
-navSelector = document.querySelector('nav');
-navSelector.appendChild(navJobs);
-navSelector.prepend(navGames);
+const newATag = document.createElement('a');
+newATag.textContent = "Jobs";
+const newerATag = document.createElement('a');
+newerATag.textContent= "Welcome";
+const navContent = document.querySelector('nav');
+navContent.append(newATag);
+navContent.prepend(newerATag);
 
 //Stretch
 
